@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs') %>
+
+<style>
+    h2 {
+        text-align: center;
+    }
+    form {
+        width: 30%;
+        margin: 20px auto;
+    }
+    #goBack {
+        text-align: center;
+    }
+</style>
+
+<header class="container jumbotron">
+    <h2>You can add new Camps here!!</h2>
+</header>
+
+<form action="/campgrounds" method="POST">
+    <div class="form-group">
+        <input style="height: 46px;" class="form-control" type="text" name="name" placeholder="Name of Camp">
+    </div>
+    <div class="form-group">
+        <input style="height: 46px;" class="form-control" type="text" name="image" placeholder="Link to Photo">
+    </div>
+    <div class="form-group">
+        <input style="height: 46px;" class="form-control" type="number" name="price" step="0.01" min="0.05" placeholder="$price/night">
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input style="height: 46px;" class="form-control" type="text" name="location" id="location" placeholder="New Delhi, India">
+    </div>
+    <div class="form-group">
+        <input style="height: 46px;" class="form-control" type="text" name="description" placeholder="Info about Camp">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary btn-lg btn-block">Add Camp</button>
+    </div>
+    <div class="form-group" id="goBack">
+        <a href="/campgrounds" class="btn btn-warning">Go Back</a>
+    </div>
+</form>
+
+<%- include('../partials/footer.ejs') %>
