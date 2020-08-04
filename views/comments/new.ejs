@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs') %>
+
+<style>
+    h2 {
+        text-align: center;
+    }
+    form {
+        width: 30%;
+        margin: 20px auto;
+    }
+    #goBack {
+        text-align: center;
+    }
+</style>
+
+<header class="container jumbotron">
+    <h2>Add comment to <%= campground.name %></h2>
+</header>
+
+<form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+    <div class="form-group">
+        <input style="height: 46px;" class="form-control" type="text" name="comment[text]" placeholder="Text">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary btn-lg btn-block">Add Comment</button>
+    </div>
+    <div class="form-group" id="goBack">
+        <a href="/campgrounds/<%= campground._id %>" class="btn btn-warning">Go Back</a>
+    </div>
+</form>
+
+<%- include('../partials/footer.ejs') %>
